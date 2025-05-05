@@ -2,24 +2,10 @@
 
 ## How to import eitri-android maven repo?
 
+eitri-android is deployed using maven central since version 3.7.0. 
+You can check the artifact using this link: (eitri-android maven central)[https://central.sonatype.com/artifact/tech.eitri/eitri-android/overview]
+
 ```kt
-
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        mavenLocal()
-        google()
-        mavenCentral()
-        // ... eitri-android maven repo
-        maven {
-            url = uri("https://maven.pkg.github.com/Calindra/eitri-android")
-            credentials {
-                username = "eitri-android"
-                password = "get your key using eitri-console"
-            }
-        }
-        //...
-    }
-}
-
+// add a new line in dependencies block from build.gradle file
+implementation("tech.eitri:eitri-android:$version")
 ```
