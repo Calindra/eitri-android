@@ -1,10 +1,9 @@
+
 # eitri-android
 
 ## Importing the eitri-android Maven artifact
 
-### Using Maven Central (3.7.0 and above)
-
-The `eitri-android` artifact is available on Maven Central starting with version **3.7.0**. You can view it here:  
+The `eitri-android` artifact is available on Maven Central. You can view it here:  
 [eitri-android on Maven Central](https://central.sonatype.com/artifact/tech.eitri/eitri-android/overview)
 
 #### Gradle Groovy DSL (`build.gradle`)
@@ -34,11 +33,14 @@ dependencies {
 
 ---
 
-### Using GitHub Packages (versions prior to 3.7.0)
+### Migrating from legacy GitHub Packages
 
-For versions **before 3.7.0**, the artifact is published to GitHub Maven Packages. You must configure your repositories accordingly.
+For users trying to update to newer versions or migrating from legacy GitHub Packages, you must configure your repositories accordingly.
 
-#### Gradle Groovy DSL (`settings.gradle`)
+#### Gradle (`settings.gradle` or `settings.gradle.kts`)
+
+Please remove the following block where a Maven repo was declared:
+
 ```groovy
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -46,7 +48,7 @@ dependencyResolutionManagement {
         mavenLocal()
         google()
         mavenCentral()
-        // Eitri Android GitHub Packages repository
+        // REMOVE ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
         maven {
             name = "GitHubPackages"
             url  = uri("https://maven.pkg.github.com/Calindra/eitri-android")
@@ -56,32 +58,24 @@ dependencyResolutionManagement {
                 password = project.findProperty("eitri.github.token")    ?: "YOUR_GITHUB_TOKEN"
             }
         }
+        // REMOVE.END ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
     }
 }
 ```
 
-#### Gradle Kotlin DSL (`settings.gradle.kts`)
-```kotlin
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        mavenLocal()
-        google()
-        mavenCentral()
-        maven {
-            name = "GitHubPackages"
-            url  = uri("https://maven.pkg.github.com/Calindra/eitri-android")
-            credentials {
-                username = (project.findProperty("eitri.github.username") as String?) ?: "YOUR_GITHUB_USERNAME"
-                password = (project.findProperty("eitri.github.token")    as String?) ?: "YOUR_GITHUB_TOKEN"
-            }
-        }
-    }
-}
+Then, update your implementation line by changing the group from `tech.calindra.eitri` to `tech.eitri`:
+
+```groovy
+// change this
+implementation "tech.calindra.eitri:eitri-android:$version"
+// to
+implementation "tech.eitri:eitri-android:$version"
 ```
 
-> **Note:** you can set properties in **`~/.gradle/gradle.properties`**:
-> ```properties
-> eitri.github.username=eitri-android
-> eitri.github.token=<get your key using eitri-console>
-> ```
+#### My App uses 2.x.y version
+
+Change your version to the latest 2.x.y release:
+
+[2.36.1](https://central.sonatype.com/artifact/tech.eitri/eitri-android/2.36.1)
+
+Version 2.36.1 is backward compatible with all previously released 2.x.y versions.
