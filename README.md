@@ -31,7 +31,12 @@ dependencies {
 </dependencies>
 ```
 
+### Minimum Requirements
+
+- minSdkVersion - Android lollipop 5.0+
+
 ---
+
 
 ### Migrating from legacy GitHub Packages
 
