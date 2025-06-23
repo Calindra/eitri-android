@@ -27,7 +27,7 @@ const val ENV_KEY = "b73b5d05-183a-4630-b442-71d2b61cfaaa"
  * It's responsible for configuring the EitriMachine and exposing the necessary Eitri APIs for the app.
  *
  * It's also wrapping the asynchronous nature of some EitriMachine methods to make it easier to use
- * in an older native iOS application.
+ * in an older native Android application.
  *
  * If you are using a modern architecture that supports coroutines, you might want to adapt
  * this service to fit your needs.
