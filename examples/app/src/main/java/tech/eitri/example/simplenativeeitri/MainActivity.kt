@@ -19,7 +19,7 @@ import tech.eitri.example.simplenativeeitri.service.MainAppService
 import tech.eitri.example.simplenativeeitri.ui.theme.SimpleNativeEitriTheme
 
 /**
- * This is a simple example of how to use Eitri in a native iOS application.
+ * This is a simple example of how to use Eitri in a native Android application.
  *
  * It creates a button that, when tapped, runs the "eitri-doctor" eitri-app.
  *
