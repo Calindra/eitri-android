@@ -35,7 +35,7 @@ SimpleFlutterEitri is a Flutter application that showcases the integration of th
 
 ## Post Install & Integration Guide
 
-After successfully integrating the eitri-flutter SDK into your project, you may want to consider implementing additional features to enhance your app's capabilities.
+After successfully integrating the Eitri framework into your Flutter project (via native Android and iOS SDKs), you may want to consider implementing additional features to enhance your app's capabilities.
 
 The following sections outline optional integrations and features that can be implemented based on your specific requirements.
 
