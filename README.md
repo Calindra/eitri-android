@@ -31,7 +31,7 @@ dependencies {
 </dependencies>
 ```
 
-### Proguard Rules (`proguard-rules.pro`)
+#### Proguard Rules (`proguard-rules.pro`)
 
 Please add the following rule to `proguard-rules.pro`
 
