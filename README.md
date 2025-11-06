@@ -31,6 +31,14 @@ dependencies {
 </dependencies>
 ```
 
+### Proguard Rules (`proguard-rules.pro`)
+
+Please add the following rule to `proguard-rules.pro`
+
+```kotlin
+-keep class tech.calindra.eitri.** { *; }
+```
+
 ### Minimum Requirements
 
 - minSdkVersion - Android lollipop 5.0+
