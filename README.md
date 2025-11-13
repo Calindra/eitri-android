@@ -37,6 +37,7 @@ Please add the following rule to `proguard-rules.pro`
 
 ```kotlin
 -keep class tech.calindra.eitri.** { *; }
+-keep class tech.eitri.** { *; }
 ```
 
 ### Minimum Requirements
