@@ -7,16 +7,19 @@ plugins {
 
 android {
     namespace = "com.example.playground"
-    compileSdk = flutter.compileSdkVersion
+    // Pinned instead of flutter.compileSdkVersion: eitri-android is built against SDK 36,
+    // and AGP refuses to compile against a dependency that needs a higher compileSdk than
+    // the consumer. The value Flutter supplies depends on the installed Flutter release.
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
     defaultConfig {
@@ -40,7 +43,7 @@ android {
 }
 
 dependencies {
-    implementation("tech.eitri:eitri-android:3.12.0")
+    implementation("tech.eitri:eitri-android:6.0.0")
 }
 
 flutter {

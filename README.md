@@ -42,7 +42,11 @@ Please add the following rule to `proguard-rules.pro`
 
 ### Minimum Requirements
 
-- minSdkVersion - Android lollipop 5.0+
+- minSdkVersion - Android lollipop 5.0+ (API level 21)
+- compileSdk 36
+- Java 17 source and target compatibility
+- A build toolchain compatible with **AGP 9** — from `6.0.0` on, the SDK is built with
+  AGP 9.3.2 / Gradle 9.5.0
 
 ---
 
